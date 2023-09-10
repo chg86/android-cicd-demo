@@ -33,8 +33,8 @@ jobs:
      - name: Upload APK
        uses: actions/upload-artifact@v3
        with:
-         name: apk-artifact
-         path: ${{ github.workspace }}/apk/app-debug.apk
+         name: apk
+         path: app/build/outputs/apk/debug/app-debug.apk
          retention-days: 1
 
  release:
@@ -55,7 +55,7 @@ jobs:
          name: apk
      - name: Create Release
        id: create_release
-       uses: actions/create-release@v3
+       uses: actions/create-release@v1
        env:
          GITHUB_TOKEN: ${{ secrets.TOKEN }}
        with:
