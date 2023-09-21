@@ -25,6 +25,15 @@ android {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
     }
+
+//    applicationVariants.all { variant ->
+//        variant.outputPath = project.rootDir.absolutePath + "/build/outputs/apk/"
+//    }
+
+    applicationVariants.all {
+            it.getPackageApplicationProvider().get().outputDirectory =
+                    new File(project.rootDir.absolutePath + "/build/outputs/apk")
+    }
 }
 
 dependencies {
