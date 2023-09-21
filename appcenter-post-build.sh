@@ -1,3 +1,3 @@
-echo $pwd
+echo $PWD
 env
-mv $pwd/app/build  $pwd/
+mv $PWD/app/build  $PWD/
