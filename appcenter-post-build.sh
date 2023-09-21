@@ -1,3 +1,3 @@
 echo $pwd
 env
-mv $pwd/build  $pwd/..
+mv $pwd/app/build  $pwd/
