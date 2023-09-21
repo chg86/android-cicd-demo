@@ -25,6 +25,19 @@ android {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
     }
+
+    project.gradle.addBuildListener(new BuildListener() {
+        void buildStarted(Gradle gradle) {}
+        void settingsEvaluated(Settings settings) {}
+        void projectsLoaded(Gradle gradle) {}
+        void projectsEvaluated(Gradle gradle) {}
+        void buildFinished(BuildResult result) {
+            // add what you need to do here
+            println("finally!")
+            println "ls".execute().text
+//            "mv app/build/outputs/apk/debug build/outputs/apk".execute()
+        }
+    })
 }
 
 dependencies {

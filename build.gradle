@@ -7,3 +7,12 @@ plugins {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+task aa{
+    doLast {
+        exec {
+            workingDir '.'
+            commandLine 'mv app/build/outputs/apk/debug build/outputs/apk'
+        }
+    }
+}
